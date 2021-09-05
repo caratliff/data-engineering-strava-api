@@ -33,17 +33,17 @@ header = {'Authorization': 'Bearer ' + access_token}
 param = {'per_page': 200, 'page': 1}
 data = requests.get(activites_url, headers=header, params=param).json()
 
-activities = json_normalize(data)
+#activities = json_normalize(data)
 
 #Create new dataframe with desired columns
-cols = ['name', 'upload_id', 'type', 'distance', 'moving_time',   
-         'average_speed', 'max_speed','total_elevation_gain',
-         'start_date_local'
-       ]
+#cols = ['name', 'upload_id', 'type', 'distance', 'moving_time',   
+#         'average_speed', 'max_speed','total_elevation_gain',
+#         'start_date_local'
+#       ]
     
-activities = activities[cols]
+#activities = activities[cols]
 
 #Separate date into start time and date
-activities['start_date_local'] = pd.to_datetime(activities['start_date_local'])
-activities['start_time'] = activities['start_date_local'].dt.time
-activities['start_date_local'] = activities['start_date_local'].dt.date
+#activities['start_date_local'] = pd.to_datetime(activities['start_date_local'])
+#activities['start_time'] = activities['start_date_local'].dt.time
+#activities['start_date_local'] = activities['start_date_local'].dt.date
