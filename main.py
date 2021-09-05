@@ -11,7 +11,7 @@ async def read_root():
     
 @app.get("/")
 async def displayData():
-    return{"Activities": activities}
+    return activities
     
 if __name__ == '__main__':
     uvicorn.run(app, port=8080, host='0.0.0.0')
