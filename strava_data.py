@@ -33,6 +33,7 @@ header = {'Authorization': 'Bearer ' + access_token}
 param = {'per_page': 200, 'page': 1}
 data = requests.get(activites_url, headers=header, params=param).json()
 
+print(data)
 #activities = json_normalize(data)
 
 #Create new dataframe with desired columns
