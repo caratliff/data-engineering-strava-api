@@ -47,5 +47,3 @@ activities = activities[cols]
 activities['start_date_local'] = pd.to_datetime(activities['start_date_local'])
 activities['start_time'] = activities['start_date_local'].dt.time
 activities['start_date_local'] = activities['start_date_local'].dt.date
-
-print(activities)
