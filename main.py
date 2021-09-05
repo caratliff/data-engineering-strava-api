@@ -1,7 +1,7 @@
 from typing import Optional
 from fastapi import FastAPI
 import uvicorn
-from strava_data import data
+from strava_data import activities
 
 app = FastAPI()
 
@@ -12,7 +12,7 @@ async def read_root():
     
 @app.get("/")
 async def displayData():
-    return{"Activities": data}
+    return{"Activities": activities}
     
 if __name__ == '__main__':
     uvicorn.run(app, port=8080, host='0.0.0.0')
