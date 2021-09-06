@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 import uvicorn
-from strava_data import activities
 import json
 
 app = FastAPI(
@@ -8,7 +7,7 @@ app = FastAPI(
     description='Application scrapes Strava Application API of an athlete to display up-to-date Strava activities.'
 )
 
-with open("data.json") as d:
+with open('data.json') as d:
     data = json.load(d)
 
 @app.get('/')

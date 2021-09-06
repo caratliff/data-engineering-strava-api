@@ -48,5 +48,9 @@ activities['start_date_local'] = pd.to_datetime(activities['start_date_local'])
 activities['start_time'] = activities['start_date_local'].dt.time
 activities['start_date_local'] = activities['start_date_local'].dt.date
 
-#save output into json file
-activities = activities.to_json('data.json')
+#save output into json file only if the data is different than the data currently in the file
+temp = activities.to_json()
+
+if temp != data.json:
+    activities = activities.to_json('data.json')
+    print("The JSON file has been updated due to a change in data.")
