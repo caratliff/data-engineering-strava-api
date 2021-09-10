@@ -10,8 +10,12 @@ app = FastAPI(
 with open('data.json') as d:
     data = json.load(d)
 
-@app.get('/')
-async def get_athlete_activities():
+@app.get("/")
+async def root():
+    return {"greeting": "Welcome to my strava data collector, enter a client to obtain athelete's activities."}
+
+@app.get('/get_activities/{client_id}')
+async def get_activities():
     return {"activities": data}
 
 if __name__ == '__main__':
