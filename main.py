@@ -12,7 +12,7 @@ with open('data.json') as d:
 
 @app.get("/")
 async def root():
-    return {"greeting": "Welcome to my strava data collector, enter a client to obtain athelete's activities."}
+    return {"greeting": "Welcome to my strava data collector, enter a client-ID to obtain an athelete's activities."}
 
 @app.get('/get_activities/{client_id}')
 async def get_activities():
